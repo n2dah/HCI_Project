@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HCI_Project</string>
+    <string name="searchbar_hint">Start your search...</string>
 </resources>

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A5EFCF"
+    android:background="@drawable/clouds"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="bottom"
@@ -22,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:drawable/btn_default"
             android:tint="#CD4949"
             app:srcCompat="@android:drawable/ic_menu_search" />
 
@@ -30,13 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:drawable/btn_default"
             app:srcCompat="@android:drawable/ic_menu_info_details" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/imgBtn_savedCharities"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:drawable/btn_default"
             app:srcCompat="@android:drawable/ic_menu_myplaces" />
 
         <ImageButton
@@ -44,7 +48,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:drawable/btn_default"
             app:srcCompat="@android:drawable/ic_menu_edit" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="@string/searchbar_hint"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/holo_orange_dark"
+        android:textCursorDrawable="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
