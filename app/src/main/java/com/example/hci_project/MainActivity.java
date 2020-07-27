@@ -14,8 +14,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void savedSearchbuttonOnClick(View v){
+    public void savedSearchButtonOnClick(View v){
         Intent i = new Intent(getApplicationContext(),SavedSearchActivity.class);
+        startActivity(i);
+    }
+    public void searchButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+        startActivity(i);
+    }
+    public void profileButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
         startActivity(i);
     }
 }
