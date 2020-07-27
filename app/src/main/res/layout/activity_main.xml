@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/clouds"
+    android:background="@drawable/holdinghands"
     tools:context=".MainActivity">
 
     <EditText
@@ -33,7 +33,7 @@
         android:id="@+id/button6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/holo_blue_bright"
-            android:onClick="profilebuttonOnClick"
+            android:onClick="profileButtonOnClick"
             android:tint="#000000"
             app:srcCompat="@drawable/ic_baseline_person_24" />
     </LinearLayout>
