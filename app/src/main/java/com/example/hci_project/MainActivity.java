@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void profileButtonOnClick(View v){
+
         Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
         startActivity(i);
     }
