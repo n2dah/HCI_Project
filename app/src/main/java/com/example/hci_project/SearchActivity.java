@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,16 +27,29 @@ public class SearchActivity extends AppCompatActivity {
     ListView listView;
 
     //holds the charity names
-    String mTitle[] = {"charity1", "charity2","charity3"};
+    String mTitle[] = {"Children's Leukemia Foundation of Michigan", "Leukemia Research Foundation",
+            "AIDS Foundation Houston","Desert AIDS Project", "San Francisco AIDS Foundation",
+            "Mesothelioma Applied Research Foundation"};
 
     //holds the description information aka the charity tags (diseases)
-    String mDescription[] = {"charity1 description","charity2 description","charity3 description"};
+    String mDescription[] = {"Leukemia","Leukemia",
+            "AIDS","AIDS","AIDS",
+            "Mesothelioma"};
 
     //charity image
-    int images[] = {R.drawable.holdinghands, R.drawable.clouds, R.drawable.offwhite};
+    int images[] = {R.drawable.holdinghands, R.drawable.clouds, R.drawable.offwhite, R.drawable.offwhite, R.drawable.offwhite, R.drawable.offwhite};
 
     ArrayList<String> list1;
     ArrayAdapter adapter;
+
+
+    //testing transition code
+    public void infoButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),InfoActivity.class);
+        startActivity(i);
+    }
+
+    //testing
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +66,15 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0){
                     Toast.makeText(SearchActivity.this, "facebook", Toast.LENGTH_SHORT).show();
+                    //transition to charity content
                 }
                 if (position == 1){
                     Toast.makeText(SearchActivity.this, "facebook", Toast.LENGTH_SHORT).show();
                 }
                 if (position == 2){
+                    Toast.makeText(SearchActivity.this, "facebook", Toast.LENGTH_SHORT).show();
+                }
+                if (position == 3){
                     Toast.makeText(SearchActivity.this, "facebook", Toast.LENGTH_SHORT).show();
                 }
             }

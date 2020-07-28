@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="404dp"
         android:layout_marginStart="25dp"
@@ -27,10 +28,10 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imgBtn_savedSearches"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
                 android:onClick="savedSearchButtonOnClick"
@@ -38,7 +39,7 @@
                 app:srcCompat="@drawable/ic_baseline_folder_special_24" />
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imgBtn_profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -56,23 +57,24 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/imgBtn_refinedSearch"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
-                android:onClick="searchButtonOnClick"
+                android:onClick="refinedSearchButtonOnClick"
                 android:tint="#000000"
                 app:srcCompat="@drawable/ic_baseline_search_24" />
 
             <ImageButton
-                android:id="@+id/imgBtn_Search"
+                android:id="@+id/imgBtn_info"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
+                android:onClick="infoButtonOnClick"
                 android:tint="#000000"
                 app:srcCompat="@drawable/ic_baseline_info_24" />
 
@@ -84,6 +86,7 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="#980B0B"
         android:fontFamily="sans-serif-black"
         android:shadowColor="#000000"
@@ -91,7 +94,37 @@
         android:textColor="@android:color/background_light"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Search for..."
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_quickSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="quickSearchButtonOnClick"
+            android:text="Quick Search" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

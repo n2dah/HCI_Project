@@ -17,16 +17,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void refinedSearchButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+        startActivity(i);
+    }
     public void savedSearchButtonOnClick(View v){
         Intent i = new Intent(getApplicationContext(),SavedSearchActivity.class);
         startActivity(i);
     }
-    public void searchButtonOnClick(View v){
+    public void quickSearchButtonOnClick(View v){
         Intent i = new Intent(getApplicationContext(),SearchActivity.class);
         startActivity(i);
     }
     public void profileButtonOnClick(View v){
         Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
+        startActivity(i);
+    }
+    public void infoButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),InfoActivity.class);
         startActivity(i);
     }
 }
