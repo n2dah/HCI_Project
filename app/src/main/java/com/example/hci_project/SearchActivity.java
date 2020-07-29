@@ -38,9 +38,17 @@ public class SearchActivity extends AppCompatActivity {
 
         searchView = findViewById(R.id.search_bar);
         final ListView listView = findViewById(R.id.myList);
-        items.add(new Charities("something", R.drawable.holdinghands));
-        items.add(new Charities("another", R.drawable.clouds));
-        items.add(new Charities("again", R.drawable.offwhite));
+        items.add(new Charities("another", R.drawable.charity1));
+        items.add(new Charities("something", R.drawable.charity2));
+        items.add(new Charities("new", R.drawable.charity3));
+        items.add(new Charities("caring", R.drawable.charity4));
+        items.add(new Charities("affordable", R.drawable.charity5));
+        items.add(new Charities("old", R.drawable.charity6));
+        items.add(new Charities("another", R.drawable.charity7));
+        items.add(new Charities("finding", R.drawable.charity8));
+        items.add(new Charities("helping", R.drawable.charity9));
+        items.add(new Charities("testing", R.drawable.holdinghands));
+
 
         listView.setAdapter(new MyAdapter(SearchActivity.this, R.layout.my_list_item, items));
 
