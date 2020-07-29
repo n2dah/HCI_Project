@@ -89,7 +89,7 @@
         android:shadowColor="#000000"
         android:text="   charitABLE"
         android:textColor="@android:color/background_light"
-        android:textSize="36sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

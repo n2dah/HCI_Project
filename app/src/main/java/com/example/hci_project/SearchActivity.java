@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
+    SearchView searchView;
     ListView listView;
 
     //holds the charity names
@@ -39,7 +39,9 @@ public class SearchActivity extends AppCompatActivity {
     //charity image
     int images[] = {R.drawable.holdinghands, R.drawable.clouds, R.drawable.offwhite, R.drawable.offwhite, R.drawable.offwhite, R.drawable.offwhite};
 
-    ArrayList<String> list1;
+    boolean checked[] = {true, true, false, false, true, false};
+
+    //ArrayList<String> list1;
     ArrayAdapter adapter;
 
 
@@ -56,9 +58,12 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        searchView = findViewById(R.id.search_bar);
         listView = findViewById(R.id.listView);
 
-        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images);
+        //custom adapter
+        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images, checked);
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -79,6 +84,21 @@ public class SearchActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                SearchActivity.this.adapter.getFilter().filter(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                SearchActivity.this.adapter.getFilter().filter(s);
+                return false;
+            }
+        });
     }
 
     class MyAdapter extends ArrayAdapter<String>{
@@ -86,13 +106,15 @@ public class SearchActivity extends AppCompatActivity {
         String rTitle[];
         String rDescription[];
         int rImgs[];
+        boolean rCheck[];
 
-        MyAdapter (Context c, String title[], String description[], int imgs[]){
+        MyAdapter (Context c, String title[], String description[], int imgs[], boolean check[]){
             super(c, R.layout.row, R.id.textView1, title);
             this.context = c;
             this.rTitle = title;
             this.rDescription = description;
             this.rImgs = imgs;
+            this.rCheck = check;
         }
 
         @NonNull
@@ -103,7 +125,9 @@ public class SearchActivity extends AppCompatActivity {
             ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.textView1);
             TextView myDescription = row.findViewById(R.id.textView2);
+            CheckBox checks = row.findViewById(R.id.checkBox);
 
+            checks.setChecked(rCheck[position]);
             images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle[position]);
             myDescription.setText(rDescription[position]);
