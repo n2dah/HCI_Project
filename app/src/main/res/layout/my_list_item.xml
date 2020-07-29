@@ -21,14 +21,39 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"/>
 
-        <TextView
-            android:id="@+id/CharityName"
-            android:textAlignment="center"
-            android:text="hello friends"
-            android:layout_weight="5"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5"
+            android:weightSum="5">
+
+            <TextView
+                android:id="@+id/CharityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2.5"
+                android:gravity="center_vertical"
+                android:text="hello friends" />
+
+            <TextView
+                android:id="@+id/CharityDisease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2.5"
+                android:gravity="center_vertical"
+                android:text="hello friends" />
+
+            <CheckBox
+                android:id="@+id/savedCharity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:text="Saved Charity" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

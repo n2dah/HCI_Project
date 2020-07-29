@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class MyAdapter extends ArrayAdapter {
     public class ViewHolder{
         TextView textView;
         ImageView imageView;
+        TextView textView2;
+        CheckBox checkView;
     }
 
     @Override
@@ -49,6 +52,9 @@ public class MyAdapter extends ArrayAdapter {
             viewHolder = new ViewHolder();
             viewHolder.imageView = row.findViewById(R.id.CharityImage);
             viewHolder.textView = row.findViewById(R.id.CharityName);
+            viewHolder.textView2 = row.findViewById(R.id.CharityDisease);
+            viewHolder.checkView = row.findViewById(R.id.savedCharity);
+
             row.setTag(viewHolder);
         }
         else{
@@ -57,6 +63,8 @@ public class MyAdapter extends ArrayAdapter {
 
         viewHolder.imageView.setImageResource(items.get(position).image);
         viewHolder.textView.setText(items.get(position).charityName);
+        viewHolder.textView2.setText(items.get(position).charityDisease);
+        viewHolder.checkView.setChecked(items.get(position).savedCharity);
 
         return row;
     }

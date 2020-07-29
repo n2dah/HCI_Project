@@ -38,16 +38,16 @@ public class SearchActivity extends AppCompatActivity {
 
         searchView = findViewById(R.id.search_bar);
         final ListView listView = findViewById(R.id.myList);
-        items.add(new Charities("another", R.drawable.charity1));
-        items.add(new Charities("something", R.drawable.charity2));
-        items.add(new Charities("new", R.drawable.charity3));
-        items.add(new Charities("caring", R.drawable.charity4));
-        items.add(new Charities("affordable", R.drawable.charity5));
-        items.add(new Charities("old", R.drawable.charity6));
-        items.add(new Charities("another", R.drawable.charity7));
-        items.add(new Charities("finding", R.drawable.charity8));
-        items.add(new Charities("helping", R.drawable.charity9));
-        items.add(new Charities("testing", R.drawable.holdinghands));
+        items.add(new Charities("Luther's Help", R.drawable.charity1, "Tuberous Sclerosis",true));
+        items.add(new Charities("American Association", R.drawable.charity2,"Lupus",false));
+        items.add(new Charities("Help in Need", R.drawable.charity3,"AIDS",true));
+        items.add(new Charities("There4U", R.drawable.charity4,"Mesothelioma",true));
+        items.add(new Charities("Skyward", R.drawable.charity5,"Mesothelioma",false));
+        items.add(new Charities("Path of Light", R.drawable.charity6,"AIDS",true));
+        items.add(new Charities("Solutions", R.drawable.charity7,"Leukemia",true));
+        items.add(new Charities("SAVE", R.drawable.charity8,"AIDS",true));
+        items.add(new Charities("Family Matters", R.drawable.charity9,"Lupus",false));
+        items.add(new Charities("Peace Finder", R.drawable.holdinghands,"Mesothelioma",true));
 
 
         listView.setAdapter(new MyAdapter(SearchActivity.this, R.layout.my_list_item, items));
@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity {
                 ArrayList<Charities> results = new ArrayList<>();
 
                 for (Charities x : items) {
-                    if (x.charityName.contains((s))) {
+                    if (x.charityDisease.contains((s))) {
                         results.add(x);
                     }
                 }
