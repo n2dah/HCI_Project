@@ -1,5 +1,8 @@
 package com.example.hci_project;
 
+import android.content.Intent;
+import android.view.View;
+
 public class Charities {
     String charityName;
     int image;
