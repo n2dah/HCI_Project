@@ -48,11 +48,11 @@
 
             <CheckBox
                 android:id="@+id/savedCharity"
+                style="?android:attr/starStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:checked="false"
-                android:text="Saved Charity" />
+                android:checked="false" />
         </LinearLayout>
 
     </LinearLayout>

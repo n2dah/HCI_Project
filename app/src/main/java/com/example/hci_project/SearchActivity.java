@@ -49,8 +49,22 @@ public class SearchActivity extends AppCompatActivity {
         items.add(new Charities("Family Matters", R.drawable.charity9,"Lupus",false));
         items.add(new Charities("Peace Finder", R.drawable.holdinghands,"Mesothelioma",true));
 
-
         listView.setAdapter(new MyAdapter(SearchActivity.this, R.layout.my_list_item, items));
+
+
+        //--
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(),CharityInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //---
+
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
