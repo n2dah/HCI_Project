@@ -10,16 +10,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     //Quick Search text transfer
     public static final String EXTRA_MESSAGE = " ";
     String myQuery = "N/A";
 
+    //Initialize user
+    //Users sampleUser = new Users("david",);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void refinedSearchButtonOnClick(View v){

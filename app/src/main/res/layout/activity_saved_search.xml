@@ -7,15 +7,15 @@
     android:background="@drawable/clouds"
     tools:context=".SavedSearchActivity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/btn_default"
         android:onClick="mainActivitybuttonOnclick"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="147dp" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+        tools:layout_editor_absoluteY="94dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/lv_savedSearch"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
@@ -43,5 +43,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
