@@ -1,6 +1,7 @@
 package com.example.hci_project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,14 +43,12 @@ public class MyAdapter extends ArrayAdapter {
         return items.size();
     }
 
-
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row;
         row = convertView;
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if(row == null){
             row = LayoutInflater.from(getContext()).inflate(R.layout.my_list_item,parent, false);
             viewHolder = new ViewHolder();
@@ -68,6 +68,32 @@ public class MyAdapter extends ArrayAdapter {
         viewHolder.textView2.setText(items.get(position).charityDisease);
         viewHolder.checkView.setChecked(items.get(position).savedCharity);
 
+        //Event handling ---------------------------------------------------------------------------
+        viewHolder.imageView.setTag(viewHolder);
+        viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewHolder viewHolder1 = (ViewHolder) view.getTag();
+                viewHolder1.textView.setText("I've been clicked!");
+                Intent i = new Intent(getContext(),CharityInfoActivity.class);
+                getContext().startActivity(i);
+            }
+        });
+
+        viewHolder.checkView.setTag(viewHolder);
+        viewHolder.checkView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewHolder viewHolder1 = (ViewHolder) view.getTag();
+                if (viewHolder1.checkView.isChecked()){
+                    Toast.makeText(getContext(), "Charity Saved", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getContext(), "Charity Removed", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
 
         return row;

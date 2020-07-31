@@ -12,8 +12,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Quick Search text transfer
     public static final String EXTRA_MESSAGE = " ";
-    String numType = "N/A";
+    String myQuery = "N/A";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),SavedSearchActivity.class);
         startActivity(i);
     }
+
+    //User clicks on the "Quick Search" button
     public void SearchButtonOnClick(View v){
         TextView textView = (TextView)findViewById(R.id.tv_mainSearch);
-        numType = textView.getText().toString();
+        myQuery = textView.getText().toString();
         Intent i = new Intent(getApplicationContext(),SearchActivity.class);
-        i.putExtra(EXTRA_MESSAGE, numType);
+        i.putExtra(EXTRA_MESSAGE, myQuery);
         startActivity(i);
     }
     public void profileButtonOnClick(View v){
