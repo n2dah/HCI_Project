@@ -43,6 +43,8 @@ public class MyAdapter extends ArrayAdapter {
         return items.size();
     }
 
+
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -67,6 +69,8 @@ public class MyAdapter extends ArrayAdapter {
         viewHolder.textView.setText(items.get(position).charityName);
         viewHolder.textView2.setText(items.get(position).charityDisease);
         viewHolder.checkView.setChecked(items.get(position).savedCharity);
+
+
 
         return row;
     }

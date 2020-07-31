@@ -38,4 +38,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),InfoActivity.class);
         startActivity(i);
     }
+    public void charityButtonOnClick(View v){
+        Intent i = new Intent(getApplicationContext(),InfoActivity.class);
+        startActivity(i);
+    }
 }

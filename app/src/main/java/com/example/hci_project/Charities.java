@@ -15,4 +15,20 @@ public class Charities {
         this.charityDisease = charityDisease;
         this.savedCharity = savedCharity;
     }
+
+    public String getCharityName() {
+        return charityName;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public String getCharityDisease() {
+        return charityDisease;
+    }
+
+    public Boolean getSavedCharity() {
+        return savedCharity;
+    }
 }
