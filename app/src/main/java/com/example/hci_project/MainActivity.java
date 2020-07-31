@@ -8,8 +8,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = " ";
+    String numType = "N/A";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +29,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),SavedSearchActivity.class);
         startActivity(i);
     }
-    public void quickSearchButtonOnClick(View v){
+    public void SearchButtonOnClick(View v){
+        TextView textView = (TextView)findViewById(R.id.tv_mainSearch);
+        numType = textView.getText().toString();
         Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+        i.putExtra(EXTRA_MESSAGE, numType);
         startActivity(i);
     }
     public void profileButtonOnClick(View v){

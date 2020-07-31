@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -24,13 +25,29 @@ public class SearchActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
         startActivity(i);
     }
+    public void saveButtonOnClick(View v){
+        CheckBox checkBox = (CheckBox) findViewById(R.id.chkbox_savedCharity);
+        if (checkBox.isChecked()){
+            Toast.makeText(getApplicationContext(), "Charity Saved", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Charity Removed", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        //MainActivity Data
+        Intent intent = getIntent();
+        String numberType = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        // SearchView Stuff
         searchView = findViewById(R.id.search_bar);
+        searchView.setQuery(numberType,false);
+
         final ListView listView = findViewById(R.id.myList);
         items.add(new Charities("Luther's Help", R.drawable.charity1, "Tuberous Sclerosis",true));
         items.add(new Charities("American Association", R.drawable.charity2,"Lupus",false));

@@ -1,11 +1,9 @@
 package com.example.hci_project;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -57,7 +55,7 @@ public class MyAdapter extends ArrayAdapter {
             viewHolder.imageView = row.findViewById(R.id.CharityImage);
             viewHolder.textView = row.findViewById(R.id.CharityName);
             viewHolder.textView2 = row.findViewById(R.id.CharityDisease);
-            viewHolder.checkView = row.findViewById(R.id.savedCharity);
+            viewHolder.checkView = row.findViewById(R.id.chkbox_savedCharity);
 
             row.setTag(viewHolder);
         }

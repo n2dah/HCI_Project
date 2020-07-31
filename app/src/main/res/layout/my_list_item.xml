@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_margin="10dp"
-    android:onClick="charityButtonOnClick"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,14 +17,15 @@
             android:id="@+id/CharityImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="6"
+            android:onClick="charityButtonOnClick"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="4"
             android:orientation="vertical"
             android:weightSum="5">
 
@@ -36,7 +36,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="2.5"
                 android:gravity="center_vertical"
-                android:text="hello friends" />
+                android:text="Charity Name Here"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/CharityDisease"
@@ -45,15 +46,16 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="2.5"
                 android:gravity="center_vertical"
-                android:text="hello friends" />
+                android:text="Specialty" />
 
             <CheckBox
-                android:id="@+id/savedCharity"
+                android:id="@+id/chkbox_savedCharity"
                 style="?android:attr/starStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:checked="false" />
+                android:checked="false"
+                android:onClick="saveButtonOnClick" />
         </LinearLayout>
 
     </LinearLayout>
