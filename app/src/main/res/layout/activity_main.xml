@@ -8,7 +8,45 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/ll_titlebar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/ll_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_appName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:elevation="400dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="10dp"
+            android:shadowColor="#000000"
+            android:text="@string/appName"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="2dp"
+            android:paddingLeft="20dp"
+            android:text="Hello user"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_navigation"
         android:layout_width="0dp"
         android:layout_height="404dp"
         android:layout_marginStart="25dp"
@@ -19,7 +57,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_search">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,25 +66,30 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageButton
+            <Button
                 android:id="@+id/imgBtn_savedSearches"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-
                 android:background="@android:drawable/btn_default_small"
+                android:drawableTop="@drawable/ic_baseline_folder_special_150"
+                android:drawablePadding="-35dp"
                 android:onClick="savedSearchButtonOnClick"
-                app:srcCompat="@drawable/ic_baseline_folder_special_100" />
+                android:text="Saved Charities"
+                android:textColor="@android:color/black" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/imgBtn_profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
+                android:drawableTop="@drawable/ic_baseline_person_150"
+                android:drawablePadding="-35dp"
                 android:onClick="profileButtonOnClick"
+                android:text="My Profile"
                 app:srcCompat="@drawable/ic_baseline_person_100" />
         </LinearLayout>
 
@@ -55,67 +99,62 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageButton
+            <Button
                 android:id="@+id/imgBtn_refinedSearch"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
+                android:drawableTop="@drawable/ic_baseline_search_24"
+                android:drawablePadding="-35dp"
                 android:onClick="refinedSearchButtonOnClick"
-                app:srcCompat="@drawable/ic_baseline_search_100" />
+                android:text="Refined Search"
+                app:srcCompat="@drawable/ic_baseline_search_150" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/imgBtn_info"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
+                android:drawableTop="@drawable/ic_baseline_info_150"
+                android:drawablePadding="-35dp"
                 android:onClick="infoButtonOnClick"
+                android:text="Info"
                 app:srcCompat="@drawable/ic_baseline_info_100" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/black"
-        android:fontFamily="sans-serif-black"
-        android:shadowColor="#000000"
-        android:text="   charitABLE"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
+        android:id="@+id/ll_search"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/ll_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/ll_titlebar">
 
         <EditText
             android:id="@+id/tv_mainSearch"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="3dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:hint="Search for..."
             android:inputType="textPersonName"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="20dp" />
 
         <Button
             android:id="@+id/btn_quickSearch"

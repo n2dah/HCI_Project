@@ -7,32 +7,23 @@
     android:background="@drawable/clouds"
     tools:context=".SavedSearchActivity">
 
-    <ImageView
-        android:id="@+id/imgView_back"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@android:drawable/btn_default"
-        android:onClick="mainActivitybuttonOnclick"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
-        tools:layout_editor_absoluteY="94dp" />
-
     <Button
+        android:id="@+id/button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@android:drawable/btn_default"
-        android:drawableTop="@drawable/ic_baseline_person_100"
-        android:drawablePadding="10dp"
-        android:drawableTint="@android:color/white"
-        android:text="Start"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imgView_back"
+        android:drawableTop="@drawable/ic_baseline_arrow_back_ios_24"
+        android:drawablePadding="0dp"
+        android:onClick="mainActivitybuttonOnclick"
+        android:text="Back"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/lv_savedSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_appName" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_appName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/black"
@@ -49,13 +40,12 @@
     <ListView
         android:id="@+id/lv_savedSearch"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="550dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgView_back" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
