@@ -17,6 +17,20 @@
         app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
         tools:layout_editor_absoluteY="94dp" />
 
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_default"
+        android:drawableTop="@drawable/ic_baseline_person_100"
+        android:drawablePadding="10dp"
+        android:drawableTint="@android:color/white"
+        android:text="Start"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imgView_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"

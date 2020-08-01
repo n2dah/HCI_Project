@@ -33,6 +33,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+
                 android:background="@android:drawable/btn_default_small"
                 android:onClick="savedSearchButtonOnClick"
                 app:srcCompat="@drawable/ic_baseline_folder_special_100" />
@@ -45,8 +46,7 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
                 android:onClick="profileButtonOnClick"
-                android:tint="#000000"
-                app:srcCompat="@drawable/ic_baseline_person_24" />
+                app:srcCompat="@drawable/ic_baseline_person_100" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,8 +73,7 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
                 android:onClick="infoButtonOnClick"
-                android:tint="#000000"
-                app:srcCompat="@drawable/ic_baseline_info_24" />
+                app:srcCompat="@drawable/ic_baseline_info_100" />
 
         </LinearLayout>
 
