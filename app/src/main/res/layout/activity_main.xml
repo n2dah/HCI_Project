@@ -120,10 +120,9 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/btn_default"
                 android:drawableTop="@drawable/ic_baseline_info_150"
-                android:drawablePadding="-35dp"
+                android:drawablePadding="-30dp"
                 android:onClick="infoButtonOnClick"
-                android:text="Info"
-                app:srcCompat="@drawable/ic_baseline_info_100" />
+                android:text="Info" />
 
         </LinearLayout>
 

@@ -6,11 +6,13 @@ public class Users {
     String name;
     ArrayList<Charities> charities;
     int profilePic;
+    boolean loggedIn;
 
-    public Users(String name, ArrayList<Charities> charities, int profilePic) {
+    public Users(String name, ArrayList<Charities> charities, int profilePic, boolean loggedIn) {
         this.name = name;
         this.charities = charities;
         this.profilePic = profilePic;
+        this.loggedIn = loggedIn;
     }
 
     public String getName() {
@@ -35,5 +37,13 @@ public class Users {
 
     public void setProfilePic(int profilePic) {
         this.profilePic = profilePic;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 }

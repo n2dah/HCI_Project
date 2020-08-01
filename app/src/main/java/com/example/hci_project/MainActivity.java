@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
     String myQuery = "N/A";
 
     //Initialize user
-    //Users sampleUser = new Users("david",);
+    ArrayList<Charities> userArray = new ArrayList<>();
+    Users sampleUser = new Users("Lacey",userArray,1, true);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (sampleUser.isLoggedIn() == true){
+            TextView textView = findViewById(R.id.tv_userName);
+            textView.setText("Hello " + sampleUser.getName().toString());
+        }
 
     }
 
@@ -46,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void profileButtonOnClick(View v){
-
-        Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
+        Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+        i.putExtra("name", sampleUser.getName());
+        i.putExtra("image", sampleUser.getProfilePic());
+        i.putExtra("loggedIn", sampleUser.isLoggedIn());
         startActivity(i);
     }
     public void infoButtonOnClick(View v){

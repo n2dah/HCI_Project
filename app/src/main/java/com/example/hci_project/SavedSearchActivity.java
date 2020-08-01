@@ -19,6 +19,8 @@ public class SavedSearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_search);
 
+        Intent intent = getIntent();
+
         final ListView listView = findViewById(R.id.lv_savedSearch);
         items.add(new Charities("Luther's Help", R.drawable.charity1, "tuberous sclerosis",true));
         items.add(new Charities("American Association", R.drawable.charity2,"lupus",true));
