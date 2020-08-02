@@ -2,20 +2,14 @@ package com.example.hci_project;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.core.app.AppLaunchChecker;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
         else{
             TextView textView = findViewById(R.id.tv_userName);
             textView.setText("Hello Guest");
+
+            Button btnSavedCharities = findViewById(R.id.btn_savedSearches);
+            btnSavedCharities.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.ic_baseline_folder_special_150_unauth,0,0);
+            btnSavedCharities.setEnabled(false);
         }
     }
 }
