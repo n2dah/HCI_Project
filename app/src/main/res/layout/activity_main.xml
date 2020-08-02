@@ -88,7 +88,6 @@
                 android:background="@android:drawable/btn_default"
                 android:drawableTop="@drawable/ic_baseline_person_150"
                 android:drawablePadding="-35dp"
-                android:onClick="profileButtonOnClick"
                 android:text="My Profile"
                 app:srcCompat="@drawable/ic_baseline_person_100" />
         </LinearLayout>
