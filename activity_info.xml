@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clouds"
+    tools:context=".InfoActivity">
+
+    <TextView
+        android:id="@+id/PhNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        android:text="Contact Number: (281) 555-5555"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/DiscInfo"
+        android:layout_width="389dp"
+        android:layout_height="33dp"
+        android:text="Disclamier: By accessing or using charitABLE, you signify your assent to this disclaimer. All information displayed in this app are for informational purposes only. We do not take responsibility for decisions taken by user, based on information provided in this app. "
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PhNum"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <TextView
+        android:id="@+id/AbtInfo"
+        android:layout_width="303dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="120dp"
+        android:text="About Us: We are a small non-profit start-up, working to help people in need to find readily available resources. "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
