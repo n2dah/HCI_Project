@@ -27,10 +27,10 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         if (loggedIn){
-            Toast.makeText(getApplicationContext(), "Your logged in.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Your logged in.", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(getApplicationContext(), "Your NOT logged in.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "You're NOT logged in.", Toast.LENGTH_SHORT).show();
         }
 
         Button btnGoBack = findViewById(R.id.btn_goBack);
@@ -49,7 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 loggedIn = false;
-                Toast.makeText(getApplicationContext(), "Your NOT logged in.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "You've logged off successfully.", Toast.LENGTH_SHORT).show();
             }
         });
 

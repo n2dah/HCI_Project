@@ -74,12 +74,11 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1){
             if(resultCode == RESULT_OK){
-                Toast.makeText(getApplicationContext(), "David", Toast.LENGTH_SHORT).show();
                 boolean loggedIn = data.getBooleanExtra("AUTH_CH",false);
                 sampleUser.setLoggedIn(loggedIn);
             }
             if(resultCode == RESULT_CANCELED){
-                Toast.makeText(getApplicationContext(), "Huhhhhh", Toast.LENGTH_SHORT).show();
+                //here
             }
         }
     }
